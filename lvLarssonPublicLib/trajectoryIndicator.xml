@@ -41,6 +41,19 @@
                 <start x="-4" y="-11" a="0"/>
             </movable>
             <movable idx="2">
+                <icon userpath="trajectoryIndicatorMC_movable.svg"/>
+                <data port="X"    dataname="Value"    idx = "0"/>
+                <data port="Y"    dataname="Value"    idx = "1"/>
+                <data port="Psi"  dataname="Value"    idx = "2"/>
+                <indicator port="showMC" dataname="Value"/>
+                <movement x="-200"   idx="0"  divisor="L#Value"/>
+                <movement y="200"    idx="1"  divisor="L#Value"/>
+                <movement a="-57.3"  idx="2" />
+                <transformorigin x="14" y="17"/>
+                <start x="186" y="183" a="0"/>
+                <start x="-4" y="-11" a="0"/>
+            </movable>
+            <movable idx="3">
                 <icon userpath="trajectoryIndicatorBoat_movable.svg"/>
                 <data port="X"    dataname="Value"    idx = "0"/>
                 <data port="Y"    dataname="Value"    idx = "1"/>
@@ -53,7 +66,7 @@
                 <start x="186" y="183" a="0"/>
                 <start x="-4" y="-11" a="0"/>
             </movable>
-            <movable idx="3">
+            <movable idx="4">
                 <icon userpath="trajectoryIndicatorDot_movable.svg"/>
                 <data port="X"    dataname="Value"    idx = "0"/>
                 <data port="Y"    dataname="Value"    idx = "1"/>

@@ -44,7 +44,7 @@ class TrajectoryIndicator : public ComponentSignal
 private:
 
     double *mpX, *mpY, *mpPsi, *mpL;
-    double *mpshowPlane,*mpshowCar,*mpshowDot,*mpshowBoat;
+    double *mpshowPlane,*mpshowCar,*mpshowMC,*mpshowDot,*mpshowBoat;
     int mVehic;
     
 public:
@@ -66,6 +66,7 @@ public:
         std::vector<HString> vehicles;
         vehicles.push_back("Plane");
         vehicles.push_back("Car");
+        vehicles.push_back("Motorcycle");
         vehicles.push_back("Boat");
         vehicles.push_back("Dot");
         addConditionalConstant("Vehicle", "Vehicle type (Animation)", vehicles, mVehic);
@@ -73,7 +74,8 @@ public:
 
 //Register output variables
         addOutputVariable("showPlane", "Plane ON/OFF variable (animation)", "-", &mpshowPlane);
-        addOutputVariable("showCar", "Car ON/OFF variable (animation)", "-", &mpshowCar);        
+        addOutputVariable("showCar", "Car ON/OFF variable (animation)", "-", &mpshowCar);
+        addOutputVariable("showMC", "Motorcycle ON/OFF variable (animation)", "-", &mpshowMC);             
         addOutputVariable("showBoat", "Boat ON/OFF variable (animation)", "-", &mpshowBoat);
         addOutputVariable("showDot", "Dot ON/OFF variable (animation)", "-", &mpshowDot);
 
@@ -88,6 +90,7 @@ public:
         // Show nothing as default
         (*mpshowPlane) = 0.0;
         (*mpshowCar) = 0.0;
+        (*mpshowMC) = 0.0;
         (*mpshowDot) = 0.0;
         (*mpshowBoat) = 0.0;
         
@@ -98,11 +101,14 @@ public:
             break;
             case 1: // Car
             (*mpshowCar) = 1.0;
+            break;        
+            case 2: // Motorcycle
+            (*mpshowMC) = 1.0;
             break;
-            case 2: // Boat
+            case 3: // Boat
             (*mpshowBoat) = 1.0;
             break;
-            case 3: // Dot
+            case 4: // Dot
             (*mpshowDot) = 1.0;
             break;
             };
